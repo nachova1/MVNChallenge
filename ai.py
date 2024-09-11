@@ -41,6 +41,6 @@ def ask_agent(query: str):
     #Y aca se usa
     response = chain.invoke(inputs)
 
-    return response
+    return response.content
 
 

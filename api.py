@@ -14,7 +14,8 @@ class UserQuery(BaseModel):
 async def ask_question(user_query: UserQuery):
     query = user_query.query
     response = ask_agent(query)
-    return response
+    #Formo la respuesta en formato JSON
+    return {"content": response}
 
 
 if __name__ == "__main__":
