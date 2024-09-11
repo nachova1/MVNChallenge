@@ -10,7 +10,7 @@ llm = ChatOllama(model="llama3")
 # Inicializa el API Wrapper de Wikipedia
 wikipedia_api = WikipediaAPIWrapper(lang="es")
 
-# Definir la herramienta de búsqueda en Wikipedia con el API Wrapper
+# Defino la herramienta de busqueda Wikipedia
 wikipedia_tool = WikipediaQueryRun(api_wrapper=wikipedia_api)
 
 # Plantilla para el agente LangChain
@@ -32,7 +32,6 @@ def create_chain():
     return prompt | llm
 
 def ask_agent(query: str):
-    """Función que ejecuta el agente y devuelve la respuesta"""
     # Ejecuta la búsqueda en Wikipedia
     wiki_result = wikipedia_tool.run(query)
     
