@@ -7,7 +7,7 @@ from langchain_ollama import ChatOllama
 llm = ChatOllama(model="llama3")
 
 # Inicializa el API Wrapper de Wikipedia
-wikipedia_api = WikipediaAPIWrapper(lang="es")
+wikipedia_api = WikipediaAPIWrapper()
 
 # Defino la herramienta de busqueda Wikipedia
 wikipedia_tool = WikipediaQueryRun(api_wrapper=wikipedia_api)
