@@ -1,7 +1,6 @@
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from langchain.prompts import PromptTemplate
-
 from langchain_ollama import ChatOllama
 
 # Inicializa el modelo local con Ollama

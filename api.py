@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from ai import ask_agent
+from agent import ask_agent
 import uvicorn
 
 app = FastAPI()
@@ -9,9 +9,9 @@ app = FastAPI()
 class UserQuery(BaseModel):
     query: str
 
-# Endpoint que recibe la consulta y llama al agente LangChain
+# Endpoint que recibe la consulta y llama al metodo ask_agent
 @app.post("/ask")
-async def ask_question(user_query: UserQuery):
+def ask_question(user_query: UserQuery):
     query = user_query.query
     response = ask_agent(query)
     #Formo la respuesta en formato JSON
