@@ -1,7 +1,15 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from agent import ask_agent
+from dotenv import load_dotenv
+import os
 import uvicorn
+
+# Cargar las variables del archivo .env
+load_dotenv()
+
+host = os.getenv("HOST")
+port = os.getenv("PORT")
 
 app = FastAPI()
 
@@ -20,5 +28,5 @@ def ask_question(user_query: UserQuery):
 
 if __name__ == "__main__":
     # Ejecuto la aplicación con Uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host=host, port=port)
 
